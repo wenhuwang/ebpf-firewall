@@ -1,5 +1,10 @@
 # ebpf-firewall
 
+## Feature
+- [x] Blacklist IPv4 CIDR
+- [x] Blacklist FQDN
+- [x] DNS query deny
+
 
 ## Usage
 
@@ -11,7 +16,10 @@ Usage: ./ebpf-firewall [options] [pcap-filter]
   -d, --device strings       network devices to run ebpf-firewall
   -m, --filter-mark uint32   filter mark for ebpf-firewall
   -k, --keep-tc-qdisc        keep tc-qdisc when exit
-pflag: help requested
+  -c  --black-cidr-list      cidr list to deny, eg: 10.9.25.0/24, 172.16.0.10/32
+  -f  --black-fqdn-list      fqdn list to deny, eg: www.baidu.com
+  -e  --enable-dns-deny      enable dns query deny
+pflag: help requested 
 ```
 
 An output example:
